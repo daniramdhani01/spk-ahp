@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 09, 2024 at 09:07 AM
+-- Generation Time: Jun 09, 2024 at 12:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -66,13 +66,7 @@ INSERT INTO `ir` (`jumlah`, `nilai`) VALUES
 (6, 1.24),
 (7, 1.32),
 (8, 1.41),
-(9, 1.45),
-(10, 1.49),
-(11, 1.51),
-(12, 1.48),
-(13, 1.56),
-(14, 1.57),
-(15, 1.59);
+(9, 1.45);
 
 -- --------------------------------------------------------
 
