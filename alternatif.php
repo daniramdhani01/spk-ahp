@@ -55,6 +55,7 @@
 			<tr>
 				<td><?php echo $i ?></td>
 				<td><?php echo $row['nama'] ?></td>
+				<?php if (isset($role) && $role == "admin"): ?>
 				<td class="right aligned collapsing">
 					<form method="post" action="alternatif.php">
 						<input type="hidden" name="id" value="<?php echo $row['id'] ?>">
@@ -62,11 +63,13 @@
 						<button type="submit" name="delete" class="ui mini red left labeled icon button"><i class="right remove icon"></i>DELETE</button>
 					</form>
 				</td>
+				<?php endif; ?>
 			</tr>
 
 <?php } ?>
 	
 		</tbody>
+		<?php if (isset($role) && $role == "admin"): ?>
 		<tfoot class="full-width">
 			<tr>
 				<th colspan="3">
@@ -78,6 +81,7 @@
 				</th>
 			</tr>
 		</tfoot>
+		<?php endif; ?>
 	</table>
 
 	<br>

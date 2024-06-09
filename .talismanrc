@@ -1,0 +1,21 @@
+threshold: medium
+fileignoreconfig:
+- filename: database/spk_ahp_ori.sql
+  checksum: f16208b1c20822592e72b5c224fd42cfa0e7170d6dcc0523f5176148967c80c0
+- filename: navbar.php
+  checksum: 72dd3e63ae14e5d00abd71469f9f5052483e541b6b3839435e4002aa61b76a70
+- filename: semantic/dist/themes/github/assets/fonts/octicons-local.ttf
+  checksum: ed20a455d5165d2c3a8270b30bb172378100c96057a0e49fcf83d60dc3e1bd1f
+- filename: semantic/dist/components/divider.css
+  checksum: 3a7a80bffe9c805a15f8d6ce2f2cd75a091b47b50e91f645b8a25098bf9648cb
+- filename: semantic/dist/components/divider.min.css
+  checksum: 8574be0288c3ef915c5172a41a00e6ba6d5841fa174b57c5e984d08190b1113a
+- filename: semantic/dist/components/rating.css
+  checksum: 99cb80fba29140e7e6ddbfba746313ef989a9ddf1ddddec7f3ed154e7b47c881
+- filename: semantic/dist/components/rating.min.css
+  checksum: 22b7198da7cdf11ecad64c4187848bd30a65ba1ee0e76627378e87cd303f1cff
+- filename: semantic/dist/semantic.css
+  checksum: ce53e6b7153a8a7179109020296c938e3bb055aa483f1ba9dba8703c550f956b
+- filename: semantic/dist/semantic.min.css
+  checksum: 8a36b950cdad3710a8583727cd830ec4761b1b157b78f478459c316e7957d5e7
+version: ""

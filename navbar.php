@@ -14,6 +14,7 @@
 </head>
 <?php 
   session_start();
+	$role = isset($_SESSION['role']) ? $_SESSION['role'] : "user";
   $isLogin = isset($_SESSION['isLogin']) ?  $_SESSION['isLogin'] : false;
   $uri = $_SERVER['PHP_SELF'];
 

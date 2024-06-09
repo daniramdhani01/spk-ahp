@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 08, 2024 at 12:56 PM
+-- Generation Time: Jun 09, 2024 at 09:07 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -266,6 +266,7 @@ INSERT INTO `ranking` (`id_alternatif`, `nilai`) VALUES
 CREATE TABLE `users` (
   `username` varchar(250) NOT NULL,
   `password` varchar(250) NOT NULL,
+  `role` varchar(250) NOT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -273,8 +274,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `password`, `id`) VALUES
-('admin', '21232f297a57a5a743894a0e4a801fc3', 13);
+INSERT INTO `users` (`username`, `password`, `role`, `id`) VALUES
+('dani', '55b7e8b895d047537e672250dd781555', 'user', 2),
+('admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 3),
+('user', 'ee11cbb19052e40b07aac0ca060c23ee', 'user', 4);
 
 --
 -- Indexes for dumped tables
@@ -372,7 +375,7 @@ ALTER TABLE `pv_alternatif`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

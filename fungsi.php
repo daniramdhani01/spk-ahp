@@ -6,19 +6,27 @@ session_start();
 function loginUser($uname, $pass) {
 	include('config.php');
 	
-	$query  = "SELECT COUNT(*) FROM users WHERE username='$uname' AND password='$pass'";
+	$query  = "SELECT username, role FROM users WHERE username='$uname' AND password='$pass'";
 	$result = mysqli_query($koneksi, $query);
-	while ($row = mysqli_fetch_array($result)) {
-		$jmlData = $row[0];
-	}
+	
 
-	if($jmlData > 0){
+	// Periksa apakah pengguna ditemukan
+	if (mysqli_num_rows($result) > 0) {
+		$row = mysqli_fetch_assoc($result);
+		
+		// Simpan username dan role dalam session
 		$_SESSION['isLogin'] = true;
+		$_SESSION['username'] = $row['username'];
+		$_SESSION['role'] = $row['role'];
+		
 		header('Location: index.php');
-		return $loginError = false;
-	}else{
+		// return $loginError = false;
+	} else {
 		return $loginError = true;
 	}
+
+	// Tutup koneksi
+	mysqli_close($koneksi);
 }
 
 function registerUser($uname, $pass){
@@ -33,7 +41,7 @@ function registerUser($uname, $pass){
 	if($jmlData > 0){
 		return "Username sudah terdaftar";
 	}else{
-		$query = "INSERT INTO users (username,password) VALUES ('$uname','$pass')";
+		$query = "INSERT INTO users (username,password,role) VALUES ('$uname','$pass','user')";
 		$result = mysqli_query($koneksi, $query);
 
 		if (!$result) {
@@ -420,6 +428,8 @@ function getConsRatio($matrik_a,$matrik_b,$n) {
 function showTabelPerbandingan($jenis,$kriteria) {
 	include('config.php');
 
+	$disabledInput = isset($_SESSION['role']) && $_SESSION['role'] == "user" ? "disabled" : "";
+
 	if ($kriteria == 'kriteria') {
 		$n = getJumlahKriteria();
 	} else {
@@ -466,7 +476,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 				<td>
 					<div class="field">
 						<div class="ui radio checkbox">
-							<input name="pilih<?php echo $urut?>" value="1" checked="" class="hidden" type="radio">
+							<input name="pilih<?php echo $urut?>" value="1" checked="" class="hidden" type="radio" <?php echo "$disabledInput"; ?>>
 							<label><?php echo $pilihan[$x]; ?></label>
 						</div>
 					</div>
@@ -474,7 +484,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 				<td>
 					<div class="field">
 						<div class="ui radio checkbox">
-							<input name="pilih<?php echo $urut?>" value="2" class="hidden" type="radio">
+							<input name="pilih<?php echo $urut?>" value="2" class="hidden" type="radio" <?php echo "$disabledInput"; ?>>
 							<label><?php echo $pilihan[$y]; ?></label>
 						</div>
 					</div>
@@ -490,7 +500,7 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	}
 
 	?>
-						<input type="number" step="0.01" name="bobot<?php echo $urut?>" value="<?php echo $nilai?>" max="10" required>
+						<input type="number" step="0.01" name="bobot<?php echo $urut?>" value="<?php echo $nilai?>" max="10" required <?php echo "$disabledInput"; ?>>
 					</div>
 				</td>
 			</tr>
@@ -501,8 +511,10 @@ function showTabelPerbandingan($jenis,$kriteria) {
 	?>
 		</tbody>
 	</table>
+	<?php if (isset($role) && $role == "admin"): ?>
 	<input type="text" name="jenis" value="<?php echo $jenis; ?>" hidden>
 	<br><br><input class="ui submit button" type="submit" name="submit" value="SUBMIT" style="margin-left: 50%; position: absolute; margin-top: -30px;">
+	<?php endif; ?>
 	</form>
 
 	<?php
