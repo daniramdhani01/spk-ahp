@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 
 // validasi user
 function loginUser($uname, $pass) {

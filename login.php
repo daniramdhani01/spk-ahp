@@ -1,7 +1,6 @@
 <?php
 	include('fungsi.php');
 	include('navbar.php');
-	session_start();
 	$message = isset($_SESSION['alert']) ? $_SESSION['alert'] : '';
 
 	if(isset($_POST['username']) && isset($_POST['password'])){
