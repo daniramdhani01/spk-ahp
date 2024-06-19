@@ -3,7 +3,7 @@ fileignoreconfig:
 - filename: database/spk_ahp_ori.sql
   checksum: 0a1c5c8a9bab071929857eddb43dc6bf167f12ff90122b7b7179a792c21f7744
 - filename: navbar.php
-  checksum: 72dd3e63ae14e5d00abd71469f9f5052483e541b6b3839435e4002aa61b76a70
+  checksum: cc7d2d18b2d1b7f3e55284fcb4b93606c4d8307016497d250d8689fc340ffb20
 - filename: semantic/dist/themes/github/assets/fonts/octicons-local.ttf
   checksum: ed20a455d5165d2c3a8270b30bb172378100c96057a0e49fcf83d60dc3e1bd1f
 - filename: semantic/dist/components/divider.css
