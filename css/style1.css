@@ -121,5 +121,37 @@ nav ul li a:hover{
   margin-left: 320px;
   box-shadow: 8px 10px 8px #abbffd;
 }
+/* border: 1px solid black; */
+.canvas-chart {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
 
-
+.ranking{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 75% 25%;
+  padding-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .ranking {
+      grid-template-columns: 1fr; /* Menjadi satu kolom pada layar kecil */
+  }
+}
+.ranking .canvas-chart{
+  display: flex;
+  flex-direction: column;
+}
+/* .ranking table{
+  width: 75%;
+} */

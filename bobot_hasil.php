@@ -129,7 +129,7 @@
 
 <br>
 
-<form action="hasil.php">
+<form action="ranking.php">
 	<button class="ui right labeled icon button " style="float: right;">
 		<i class="right arrow icon"></i>
 		Lanjut

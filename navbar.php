@@ -71,7 +71,7 @@
             ?>
           </ul>
         </li>
-        <li><a href="hasil.php">Ranking</a></li>
+        <li><a href="ranking.php">Ranking</a></li>
       </ul>
       <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <input class="mt-2 btn btn-warning" type="submit" name="logout" value="Logout">
